@@ -1,0 +1,27 @@
+
+.grid {
+    display: grid;
+    grid-template-columns: 200px auto 200px;
+    grid-template-rows: 20vh 60vh 10vh;
+    gap:20px;
+    }
+    
+    header,
+    nav,
+    article,
+    aside,
+    footer{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:rgb(9, 93, 172);
+    }
+    
+    header,footer{
+        grid-column:1/4;
+    }
+
+.message {
+    font-weight: 600;
+    color: blue;
+}
