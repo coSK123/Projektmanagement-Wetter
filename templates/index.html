@@ -28,8 +28,8 @@
             {% if data["main"] == "Rain" %}
                 <image id="weatherimg" src="{{ url_for('static', filename='rain.jpeg')}}" alt="**Picture of Rain**"/>
             {% endif %}
-            <div>The temperature in {{data["city"]}} is {{data["temp"]}} degrees.</div>
-            <div>The airpressure is {{data["pres"]}} and the humidity{{data["humd"]}}.</div>
+            <div>The temperature in {{data["city"]}} is {{data["temp"]}} degrees celsius.</div>
+            <div>The airpressure is {{data["pres"]}} and the humidity is {{data["humd"]}}%.</div>
             <div>Description: {{data["desc"]}}</div>
             <form action="/" method="get">
                 <button id="changecity" type="submit" value="Change City" class="btn btn-primary">Change City</button>
