@@ -3,28 +3,7 @@
 {% block content %}
 <div id="main">
     <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  
     </header>
     {% if data=="error" %}
         <form class="column center" action="#" method="post">
@@ -39,12 +18,21 @@
         </form>
         
     {% elif data %}
-        <div id="content" class="column">
+        {% if data["main"] == "Rain" %}
+        <div style="background-image: '{{ url_for('static', filename='rain_bg.jpg')}}'" id="content" class="column center"></div>
+
+        {% else %}
+        <div id="content" class="column center"></div>
+        {% endif %}
+        
+            {% if data["main"] == "Rain" %}
+                <image id="weatherimg" src="{{ url_for('static', filename='rain.jpeg')}}" alt="**Picture of Rain**"/>
+            {% endif %}
             <div>The temperature in {{data["city"]}} is {{data["temp"]}} degrees.</div>
             <div>The airpressure is {{data["pres"]}} and the humidity{{data["humd"]}}.</div>
             <div>Description: {{data["desc"]}}</div>
             <form action="/" method="get">
-                <input id="changecity" type="submit" value="Change City"/>
+                <button id="changecity" type="submit" value="Change City" class="btn btn-primary">Change City</button>
             </form>
         </div>
     {% else %}
@@ -58,7 +46,7 @@
     {% endif %}
 
     
-    <footer>footer</footer>
+    <footer></footer>
 
 </div>
 {% endblock %}

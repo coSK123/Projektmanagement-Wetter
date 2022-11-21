@@ -1,6 +1,6 @@
 html {
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    background-color: #181a1b;
+    background-color: #797979;
     color: #e8e6e3;
     width: 100vw;
     height: 100vh;
@@ -18,15 +18,19 @@ footer, header{
 }
 
 #main{
-  height: 70vh;
-  background-color: #181a1b;
+  height: 100vh;
+}
+
+#weatherimg{
+  height: 10vh;
+  width: 10vw;
 }
 
 #city{
   font-size: large;
   font-weight: 500;
   margin-bottom: 10px;
-  color: #e8e6e3;
+  color: #111111;
 }
 
 .margin{
@@ -50,8 +54,6 @@ footer, header{
 }
 
 #content{
-  
-
   padding-top: 5vh;
   padding-bottom: 5vh;
 }

@@ -36,10 +36,9 @@ def data(city_name):
             # key in variable y
             y = x["main"]
 
-            main = x["weather"][0]["main"]
-
             # store the value corresponding
             # to the "temp" key of y
+            main = y["main"]
             current_temperature = y["temp"]
             current_temperature = round(current_temperature-273)
             temp_min = round(y["temp_min"]-273)

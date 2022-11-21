@@ -15,6 +15,7 @@ def home():
         weather_data["city"] = city
         if weather_data["desc"] == "error":
             weather_data = "error"
+    print(weather_data)
     return render_template("index.html", data=weather_data)
 
 @app.route("/hello")
