@@ -69,8 +69,9 @@ def data(city_name):
 
 	else:
 		print(" City Not Found ")
-	return current_temperature, current_pressure, current_humidity, weather_description
-  
-data(input("Enter city name : "))
+	return {"temp": current_temperature, "pres": current_pressure, "humd": current_humidity, "desc": weather_description}
+
+if __name__ == "__main__":
+	data(input("Enter city name : "))
  
 
