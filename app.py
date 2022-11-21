@@ -13,6 +13,8 @@ def home():
         city = request.form["city"]
         weather_data = data(str(city))
         weather_data["city"] = city
+        if weather_data["desc"] == "error":
+            weather_data = "error"
     return render_template("index.html", data=weather_data)
 
 @app.route("/hello")
