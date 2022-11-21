@@ -27,6 +27,8 @@
         
             {% if data["main"] == "Rain" %}
                 <image id="weatherimg" src="{{ url_for('static', filename='rain.jpeg')}}" alt="**Picture of Rain**"/>
+                {%elif data["main"] == "Snow"%}
+                <image id="weatherimg" src="{{ url_for('static', filename='snow.jpeg')}}" alt="**Picture of Snow**"/>
             {% endif %}
             <div>The temperature in {{data["city"]}} is {{data["temp"]}} degrees celsius.</div>
             <div>The airpressure is {{data["pres"]}} and the humidity is {{data["humd"]}}%.</div>
