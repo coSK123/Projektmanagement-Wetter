@@ -1,0 +1,77 @@
+html {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    background-color: #797979;
+    color: #e8e6e3;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+footer, header{
+  
+  height: 15vh;
+  width: 100vw;
+}
+.navbar-brand{
+  padding-left: 5vw;
+}
+
+#main{
+  height: 100vh;
+}
+
+#weatherimg{
+  height: 10vh;
+  width: 10vw;
+}
+
+#city{
+  font-size: large;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #111111;
+}
+
+.margin{
+  margin: 20px;
+}
+
+#getweatherinfo{
+  width: 200px;
+  margin: 50px;
+}
+
+#inputcity{
+  width: 200px;
+
+}
+
+#changecity{
+  margin: 50px;
+  width: 200px;
+
+}
+
+#content{
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+
+}
+
