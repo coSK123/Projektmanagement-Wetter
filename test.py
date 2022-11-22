@@ -63,6 +63,9 @@ def data(city_name):
             # to the "description" key at
             # the 0th index of z
             weather_description = z[0]["description"]
+            nm = [x for x in city_name]
+            nm[0] = nm[0].upper()
+            city_name = "".join(nm)
 
             # print following values
             c = {"city": city_name, "main": main, "temp": current_temperature, "pres": current_pressure, "humd": current_humidity, 
