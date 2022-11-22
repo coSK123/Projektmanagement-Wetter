@@ -19,11 +19,14 @@ footer, header{
 
 #main{
   height: 100vh;
+  background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;              
 }
 
 #weatherimg{
   height: 10vh;
-  width: 10vw;
+  width: auto;
 }
 
 #city{
@@ -46,6 +49,7 @@ footer, header{
   width: 200px;
 
 }
+
 
 #changecity{
   margin: 50px;

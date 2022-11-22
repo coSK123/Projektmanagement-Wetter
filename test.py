@@ -65,13 +65,14 @@ def data(city_name):
             weather_description = z[0]["description"]
 
             # print following values
-            c = {"main": main, "temp": current_temperature, "pres": current_pressure, "humd": current_humidity, 
+            c = {"city": city_name, "main": main, "temp": current_temperature, "pres": current_pressure, "humd": current_humidity, 
                 "desc": weather_description, "feel": feels_like, "mint": temp_min, "maxt": temp_max, "wind": wind}
             print(c)
             return c
 
         else:
             print(" City Not Found ")
+            return {"temp": 0, "pres": 0, "humd": 0, "desc": "error", "feel": 0, }
         
     except Exception as e:
         print("except" + str(e))

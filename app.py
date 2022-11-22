@@ -5,6 +5,8 @@ from test import data
 
 app = Flask(__name__)
 
+data_to_images = {"Clouds": ["overcastclouds.jpeg", "cloud_bg.jpg"], "Rain": ["rain.jpeg", "rain_bg.jpg"], "Clear": ["clearsky.jpeg", "clear_bg.jpg"],
+                  "Snow": ["snow.jpeg", "snow_bg.jpg"]}
 
 @app.route("/", methods=["POST", "GET"])
 def home():
@@ -12,10 +14,15 @@ def home():
     if request.method == "POST":
         city = request.form["city"]
         weather_data = data(str(city))
-        weather_data["city"] = city
+        
         if weather_data["desc"] == "error":
             weather_data = "error"
-    print(weather_data)
+        try:
+            weather_data["img"], weather_data["bg"] = data_to_images[weather_data["main"]]
+        except:
+            print("not in dict yet")
+
+        print(weather_data)
     return render_template("index.html", data=weather_data)
 
 @app.route("/hello")

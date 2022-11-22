@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
-<div id="main">
+
+<div style=" background-image: linear-gradient(to top, #142033cc, #2c74e8ba ), url({{url_for('static', filename=data['bg'])}})" id="main">
     <header>
   
     </header>
@@ -18,16 +19,9 @@
         </form>
         
     {% elif data %}
-        {% if data["main"] == "Rain" %}
-        <div style="background-image: '{{ url_for('static', filename='rain_bg.jpg')}}'" id="content" class="column center"></div>
-
-        {% else %}
-        <div id="content" class="column center"></div>
-        {% endif %}
-        
-            {% if data["main"] == "Rain" %}
-                <image id="weatherimg" src="{{ url_for('static', filename='rain.jpeg')}}" alt="**Picture of Rain**"/>
-            {% endif %}
+        <div id="content"  class="column center">
+            
+            <image id="weatherimg" src="{{ url_for('static', filename=data['img'] )}}" alt="**Picture**"/>
             <div>The temperature in {{data["city"]}} is {{data["temp"]}} degrees.</div>
             <div>The airpressure is {{data["pres"]}} and the humidity{{data["humd"]}}.</div>
             <div>Description: {{data["desc"]}}</div>
