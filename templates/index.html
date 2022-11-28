@@ -1,18 +1,57 @@
 {% extends "base.html" %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
-<div>
-    {%if data %}
-    <div>The temperature in {{data["city"]}} is {{data["temp"]}} degrees.</div>
-    <div>The airpressure is {{data["pres"]}} and the humidity{{data["humd"]}}.</div>
-    <div>Description: {{data["desc"]}}</div>
-{% else %}
-<form action="#" method="post">
-    <p>City:</p>
-    <p><input type="text" name="city" /></p>
-    <p><input type="submit" value="submit"/></p>
-</form>
-{% endif %}
+
+<div style=" background-image: linear-gradient(to top, #5c76cccc, #70a1f1ba ), url({{url_for('static', filename=data['bg'])}})" id="main">
+    <header>
+  
+    </header>
+    {% if data=="error" %}
+    <div id="entercity" >
+        <form class="column center" action="#" method="post">
+            <div class="column">
+                <div id="city">City</div>
+                <input id="inputcity" type="text" name="city" />
+            </div>
+            <div class="alert alert-danger margin" role="alert">
+                There was an Error with your request!
+              </div>
+            <button id="getweatherinfo" type="submit" value="Get weather info" class="btn btn-primary">Get weather info</button>
+        </form>
+    </div>
+    {% elif data %}
+        <div id="content"  class="column center">
+            <div id="complete">
+            <div id="cityicon">
+                <div id="citytext">{{data["city"]}} </div>
+                
+            </div>
+            
+            <div id="tempcontainer">
+                <div id="temp">{{data["temp"]}}</div>
+                <image  id="crad" src="{{ url_for('static', filename='/icons/wi-celsius.svg') }}"/>
+                <image id="weatherimg" src="{{ url_for('static', filename=data['img'] )}}" alt="**Picture**"/>
+            </div>
+            <div id="desc">{{data["desc"]}}</div>
+            <form id="formchange" action="/" method="get">
+                <button id="changecity" type="submit" value="Change City" class="btn btn-outline-dark">Change City</button>
+            </form>
+        </div>
+        </div>
+    {% else %}
+    <div id="entercity" >
+        <form class="column center" action="#" method="post">
+            <div class="column">
+                <div id="city">City</div>
+                <input id="inputcity" type="text" name="city" />
+            </div>
+            <button id="getweatherinfo" type="submit" value="Get weather info" class="btn btn-outline-primary">Get weather info</button>
+        </form>
+        </div>
+    {% endif %}
+
+    
+    <footer></footer>
 
 </div>
 {% endblock %}
