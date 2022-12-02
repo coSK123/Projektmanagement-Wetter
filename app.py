@@ -6,7 +6,8 @@ from test import data
 app = Flask(__name__)
 
 data_to_images = {"Clouds": ["/icons/wi-cloudy.svg", "cloud_bg.jpg"], "Rain": ["/icons/wi-showers.svg", "rain_bg.jpg"],
-                   "Clear": ["/icons/wi-day-sunny.svg", "clear_bg.jpg"], "Snow": ["/icons/wi-snow.svg", "snow_bg.jpg"]}
+                   "Clear": ["/icons/wi-day-sunny.svg", "clear_bg.jpg"], "Snow": ["/icons/wi-snow.svg", "snow_bg.jpg"],
+                    "Drizzle": ["/icons/wi-showers.svg", "rain_bg.jpg"]}
 
 @app.route("/", methods=["POST", "GET"])
 def home():
