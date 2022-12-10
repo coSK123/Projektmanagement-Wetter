@@ -1,5 +1,4 @@
 # Projektmanagement-Wetter
 
-test.py contains code to get the needed data from the openweather API
-app.py is just a standart python flask code
-the html and css file are used by app.py so that app.py is only used for data handling
+A project for our projectmanagement class in our first year of university.
+It is a small website that shows the current weather at a location specified by the user.
